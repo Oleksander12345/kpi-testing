@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Демонстрація основних UI елементів: radiobutton, checkbox, text input, tabs, button, label, link, tooltip, dropdown list і data grid." />
+  <title>UI Elements — навчальна web-сторінка</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <p class="eyebrow">Практичне завдання · UI Elements</p>
+          <h1>Основні елементи інтерфейсу web-сторінки</h1>
+          <p>
+            На цій сторінці наведено 10 поширених UI-елементів, їх приклади та коротке
+            пояснення призначення. Усі демонстраційні елементи працюють без додаткових бібліотек.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container grid" aria-label="Демонстрація UI елементів">
+
+      <article class="card">
+        <span class="card-number">1</span>
+        <h2>Radiobutton</h2>
+        <p class="description">
+          Перемикач для вибору лише одного варіанта з групи взаємовиключних опцій.
+        </p>
+        <div class="demo inline">
+          <label><input type="radio" name="priority" value="low" checked /> Низький</label>
+          <label><input type="radio" name="priority" value="medium" /> Середній</label>
+          <label><input type="radio" name="priority" value="high" /> Високий</label>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">2</span>
+        <h2>Checkbox</h2>
+        <p class="description">
+          Прапорець для незалежного ввімкнення або вимкнення однієї чи кількох опцій.
+        </p>
+        <div class="demo stack">
+          <label><input type="checkbox" checked /> Отримувати повідомлення</label>
+          <label><input type="checkbox" /> Автоматично зберігати зміни</label>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">3</span>
+        <h2>Text input</h2>
+        <p class="description">
+          Поле для введення однорядкового тексту, наприклад імені, пошукового запиту або назви.
+        </p>
+        <div class="demo stack">
+          <label for="nameInput">Ваше ім’я</label>
+          <input id="nameInput" type="text" placeholder="Введіть ім’я" />
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">4</span>
+        <h2>Tabs</h2>
+        <p class="description">
+          Вкладки організовують пов’язаний контент у кілька секцій і дозволяють перемикатися між ними без переходу на іншу сторінку.
+        </p>
+        <div class="demo">
+          <div class="tabs" role="tablist" aria-label="Приклад вкладок">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab1">Опис</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab2">Характеристики</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab3">Контакти</button>
+          </div>
+          <div id="tab1" class="tab-panel active" role="tabpanel">Це вміст вкладки «Опис».</div>
+          <div id="tab2" class="tab-panel" role="tabpanel">Тут можуть бути характеристики продукту або сервісу.</div>
+          <div id="tab3" class="tab-panel" role="tabpanel">Тут може бути контактна інформація.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">5</span>
+        <h2>Button</h2>
+        <p class="description">
+          Кнопка запускає дію: надсилання форми, збереження даних, відкриття діалогу тощо.
+        </p>
+        <div class="demo">
+          <button id="demoButton" class="btn" type="button">Натиснути</button>
+          <div id="buttonStatus" class="status" aria-live="polite"></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">6</span>
+        <h2>Text label</h2>
+        <p class="description">
+          Текстова мітка пояснює призначення поля або іншого елемента. Атрибут <code>for</code> пов’язує label із полем вводу.
+        </p>
+        <div class="demo stack">
+          <label for="emailInput">Електронна пошта</label>
+          <input id="emailInput" type="text" placeholder="name@example.com" />
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">7</span>
+        <h2>Link</h2>
+        <p class="description">
+          Посилання використовується для переходу на іншу сторінку, сайт або до окремої секції документа.
+        </p>
+        <div class="demo">
+          <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">
+            Відкрити MDN Web Docs
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">8</span>
+        <h2>Tooltip</h2>
+        <p class="description">
+          Спливаюча підказка показує додаткову коротку інформацію при наведенні курсора або фокусі.
+        </p>
+        <div class="demo">
+          Наведіть курсор на
+          <span class="tooltip" tabindex="0">
+            цей текст
+            <span class="tooltip-text" role="tooltip">
+              Tooltip допомагає пояснити елемент без перевантаження інтерфейсу.
+            </span>
+          </span>.
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="card-number">9</span>
+        <h2>Dropdown list</h2>
+        <p class="description">
+          Випадаючий список дозволяє вибрати один варіант із заздалегідь визначеного набору значень.
+        </p>
+        <div class="demo stack">
+          <label for="roleSelect">Оберіть роль</label>
+          <select id="roleSelect">
+            <option>QA Engineer</option>
+            <option>Developer</option>
+            <option>Designer</option>
+            <option>Project Manager</option>
+          </select>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <span class="card-number">10</span>
+        <h2>Data grid</h2>
+        <p class="description">
+          Таблична сітка відображає структуровані дані у рядках і стовпцях. Часто використовується для списків користувачів,
+          товарів, задач, тест-кейсів або звітів.
+        </p>
+        <div class="table-wrap" role="region" aria-label="Таблиця тест-кейсів" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Назва тесту</th>
+                <th>Тип</th>
+                <th>Пріоритет</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TC-001</td>
+                <td>Авторизація з валідними даними</td>
+                <td>Functional</td>
+                <td>High</td>
+                <td><span class="badge">Passed</span></td>
+              </tr>
+              <tr>
+                <td>TC-002</td>
+                <td>Перевірка обов’язкового поля Email</td>
+                <td>Validation</td>
+                <td>Medium</td>
+                <td><span class="badge">Passed</span></td>
+              </tr>
+              <tr>
+                <td>TC-003</td>
+                <td>Відображення сторінки на мобільному</td>
+                <td>UI</td>
+                <td>Medium</td>
+                <td><span class="badge">Passed</span></td>
+              </tr>
+              <tr>
+                <td>TC-004</td>
+                <td>Перехід за зовнішнім посиланням</td>
+                <td>Navigation</td>
+                <td>Low</td>
+                <td><span class="badge">Passed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container">
+    Навчальна web-сторінка з прикладами UI-елементів · HTML + CSS + JavaScript
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
